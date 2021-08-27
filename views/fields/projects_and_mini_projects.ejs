@@ -1,136 +1,136 @@
 <%- include ("../partials/header") %>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid px-5 pt-2">
 
     <section id="form">
       <form id="myForm" class="needs-validation" novalidate action="/students/projects"
         data-isinsertmode=<%=isInsertMode%>>
-        <div class="container-fluid">
 
-          <!-- Header Section -->
 
-          <div class="row data-row">
-            <div class="col-md-8 mb-3">
-              <h4 class="mb-3 title">Projects/Mini Projects Data Entry</h4>
-            </div>
-            <div class="col-md-4 mb-3 report">
-              <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-            </div>
+        <!-- Header Section -->
+
+        <div class="row data-row">
+          <div class="col-md-8 mb-3">
+            <h4 class="mb-3 title">Projects/Mini Projects Data Entry</h4>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">Title</label>
-                <input type="text" name="title" class="form-control" required>
-                <div class="invalid-feedback">
-                  Valid title is required.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">Duration/No. of man hours</label>
-                <input type="text" name="duration" class="form-control" required>
-                <div class="invalid-feedback">
-                  Valid duration is required.
-                </div>
+          <div class="col-md-4 mb-3 report">
+            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">Title</label>
+              <input type="text" name="title" class="form-control" required>
+              <div class="invalid-feedback">
+                Valid title is required.
               </div>
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Start Date</label>
-              <input type="date" name="startDate" class="date__control start__date form-control" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">End Date</label>
-              <input type="date" name="endDate" class="date__control end__date form-control" required>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">Duration/No. of man hours</label>
+              <input type="text" name="duration" class="form-control" required>
+              <div class="invalid-feedback">
+                Valid duration is required.
+              </div>
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-4 mb-3">
-              <div class="form-group">
-                <label class="required">Semester</label>
-                <select class="custom-select d-block w-100" name="sem" required>
-                  <option value="">Choose...</option>
-                  <option>First Semester</option>
-                  <option>Second Semester</option>
-                  <option>Third Semester</option>
-                  <option>Fourth Semester</option>
-                  <option>Fifth Semester</option>
-                  <option>Sixth Semester</option>
-                  <option>Seventh Semester</option>
-                  <option>Eighth Semester</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid semster.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <div class="form-group">
-                <label class="required">Type of Project</label>
-                <select name="type" class="custom-select d-block w-100" required>
-                  <option value="">Choose...</option>
-                  <option>Mini Project</option>
-                  <option>Final Year Project</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid type.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">Location</label>
-              <select name="location" class="custom-select d-block w-100" onChange="changeFunc();" id="selectBox"
-                required>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Start Date</label>
+            <input type="date" name="startDate" class="date__control start__date form-control" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">End Date</label>
+            <input type="date" name="endDate" class="date__control end__date form-control" required>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-4 mb-3">
+            <div class="form-group">
+              <label class="required">Semester</label>
+              <select class="custom-select d-block w-100" name="sem" required>
                 <option value="">Choose...</option>
-                <option>In House</option>
-                <option value="others">Outside</option>
+                <option>First Semester</option>
+                <option>Second Semester</option>
+                <option>Third Semester</option>
+                <option>Fourth Semester</option>
+                <option>Fifth Semester</option>
+                <option>Sixth Semester</option>
+                <option>Seventh Semester</option>
+                <option>Eighth Semester</option>
               </select>
-              <input name="location" placeholder="Mention Here..." class="form-control other-text" type="text"
+              <div class="invalid-feedback">
+                Please select a valid semster.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-group">
+              <label class="required">Type of Project</label>
+              <select name="type" class="custom-select d-block w-100" required>
+                <option value="">Choose...</option>
+                <option>Mini Project</option>
+                <option>Final Year Project</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid type.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="required">Location</label>
+            <select name="location" class="custom-select d-block w-100" onChange="changeFunc();" id="selectBox"
+              required>
+              <option value="">Choose...</option>
+              <option>In House</option>
+              <option value="others">Outside</option>
+            </select>
+            <input name="location" placeholder="Mention Here..." class="form-control other-text" type="text"
+              style="display: none" id="textboxes">
+            <div class="invalid-feedback">
+              Please select a valid location.
+            </div>
+          </div>
+        </div>
+
+        <div class="row data-row">
+
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">Prize</label>
+              <select name="prize" class="custom-select d-block w-100" onChange="changeFunc();" required>
+                <option value="">Choose...</option>
+                <option>First</option>
+                <option>Second</option>
+                <option>Third</option>
+                <option value="others">Others</option>
+              </select>
+              <input name="prize" placeholder="Mention Here..." class="form-control other-text" type="text"
                 style="display: none" id="textboxes">
               <div class="invalid-feedback">
-                Please select a valid location.
+                Please select a valid prize.
               </div>
             </div>
           </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">COE</label>
 
-          <div class="row data-row">
+              <!-- COE -->
+              <%- include ("../partials/coe") %>
 
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">Prize</label>
-                <select name="prize" class="custom-select d-block w-100" onChange="changeFunc();" required>
-                  <option value="">Choose...</option>
-                  <option>First</option>
-                  <option>Second</option>
-                  <option>Third</option>
-                  <option value="others">Others</option>
-                </select>
-                <input name="prize" placeholder="Mention Here..." class="form-control other-text" type="text"
-                  style="display: none" id="textboxes">
                 <div class="invalid-feedback">
-                  Please select a valid prize.
+                  Please provide a valid type.
                 </div>
-              </div>
             </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">COE</label>
-
-                <!-- COE -->
-                <%- include ("../partials/coe") %>
-
-                  <div class="invalid-feedback">
-                    Please provide a valid type.
-                  </div>
-              </div>
 
 
-              <!-- <div class="col-md-6 mb-3">
+            <!-- <div class="col-md-6 mb-3">
 
               <label class="required">Submission Date</label>
               <input type="date" class="form-control" name="filterDate" required>
@@ -141,30 +141,34 @@
             </div> -->
 
 
-            </div>
           </div>
-          <%- include ("../partials/description") %>
-
-
-            <div class="submit-button">
-              <%if(isInsertMode){%>
-                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                  Submit</button>
-                <%} else{%>
-                  <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                    Update</button>
-                  <span id='variableJSON' hidden>
-                    <%= JSON.stringify(data); %>
-                  </span>
-                  <%}%>
-            </div>
         </div>
+        <div class="row data-row">
+          <div class="col-md-12 mb-3">
+            <%- include ("../partials/description") %>
+
+
+              <div class="submit-button">
+                <%if(isInsertMode){%>
+                  <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                    Submit</button>
+                  <%} else{%>
+                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                      Update</button>
+                    <span id='variableJSON' hidden>
+                      <%= JSON.stringify(data); %>
+                    </span>
+                    <%}%>
+              </div>
+          </div>
+        </div>
+  </div>
 
 
 
-      </form>
 
-    </section>
+
+  </section>
 
   </div>
 

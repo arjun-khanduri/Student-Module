@@ -1,115 +1,121 @@
 <%- include ("../partials/header") %>
 
-    <div class="container-fluid">
+    <div class="container-fluid px-5 pt-2">
         <section id="form">
             <form id="myForm" class="needs-validation" novalidate action="/student/internship_cell"
                 data-isinsertmode=<%=isInsertMode%>>
-                <div class="container-fluid">
-                    <div class="row data-row">
-                        <div class="col-md-8 mb-3">
-                            <h4 class="mb-3 title">Internship Cell Data Entry</h4>
-                        </div>
-                        <div class="col-md-4 mb-3 report">
-                            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                        </div>
+
+                <div class="row data-row">
+                    <div class="col-md-8 mb-3">
+                        <h4 class="mb-3 title">Internship Cell Data Entry</h4>
                     </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Company Name</label>
-                            <input type="text" name="companyName" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Valid company name is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Title/Domain of the intern project</label>
-                            <input type="text" name="title" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Valid domain is required.
-                            </div>
-                        </div>
+                    <div class="col-md-4 mb-3 report">
+                        <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Stipend</label>
-                            <input type="text" name="stipend" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Valid stipend is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Semester</label>
-                            <select name="semester" class="custom-select d-block w-100" required>
-                                <option value="">Choose...</option>
-                                <option>First Semester</option>
-                                <option>Second Semester</option>
-                                <option>Third Semester</option>
-                                <option>Fourth Semester</option< />>
-                                <option>Fifth Semester</option>
-                                <option>Sixth Semester</option>
-                                <option>Seventh Semester</option>
-                                <option>Eighth Semester</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid semester.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Start Date</label>
-                            <input type="date" name="startDate" class="date__control start__date form-control" required>
-                            <div class="invalid-feedback">
-                                Valid start date is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="required">End Date</label>
-                            <input type="date" class="form-control date__control end__date" name="endDate" required>
-                            <div class="invalid-feedback">
-                                Valid end date is required.
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Duration</label>
-                            <input type="text" name="duration" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Valid duration is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label>COE</label>
-                            <!-- COE -->
-                            <%- include ("../partials/coe") %>
-
-                                <div class="invalid-feedback">
-                                    Please select a valid type.
-                                </div>
-
-                        </div>
-                    </div>
-
-
-
-
-                    <%- include ("../partials/description") %>
-                        <div class="submit-button">
-                            <%if(isInsertMode){%>
-                                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                                    Submit</button>
-                                <%} else{%>
-                                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                                        Update</button>
-                                    <span id='variableJSON' hidden>
-                                        <%= JSON.stringify(data); %>
-                                    </span>
-                                    <%}%>
-                        </div>
                 </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Company Name</label>
+                        <input type="text" name="companyName" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Valid company name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Title/Domain of the intern project</label>
+                        <input type="text" name="title" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Valid domain is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Stipend</label>
+                        <input type="text" name="stipend" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Valid stipend is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Semester</label>
+                        <select name="semester" class="custom-select d-block w-100" required>
+                            <option value="">Choose...</option>
+                            <option>First Semester</option>
+                            <option>Second Semester</option>
+                            <option>Third Semester</option>
+                            <option>Fourth Semester</option< />>
+                            <option>Fifth Semester</option>
+                            <option>Sixth Semester</option>
+                            <option>Seventh Semester</option>
+                            <option>Eighth Semester</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid semester.
+                        </div>
+                    </div>
+                </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Start Date</label>
+                        <input type="date" name="startDate" class="date__control start__date form-control" required>
+                        <div class="invalid-feedback">
+                            Valid start date is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="required">End Date</label>
+                        <input type="date" class="form-control date__control end__date" name="endDate" required>
+                        <div class="invalid-feedback">
+                            Valid end date is required.
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Duration</label>
+                        <input type="text" name="duration" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Valid duration is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>COE</label>
+                        <!-- COE -->
+                        <%- include ("../partials/coe") %>
+
+                            <div class="invalid-feedback">
+                                Please select a valid type.
+                            </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="row data-row">
+                    <div class="col-md-12 mb-3">
+                        <%- include ("../partials/description") %>
+
+
+                            <div class="submit-button">
+                                <%if(isInsertMode){%>
+                                    <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                                        Submit</button>
+                                    <%} else{%>
+                                        <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                                            Update</button>
+                                        <span id='variableJSON' hidden>
+                                            <%= JSON.stringify(data); %>
+                                        </span>
+                                        <%}%>
+                            </div>
+                    </div>
+                </div>
+
             </form>
         </section>
 

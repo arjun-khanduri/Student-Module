@@ -1,9 +1,10 @@
 <%- include ("../partials/header") %>
 
-<div class="container-fluid">
-    <section id="form">
-        <form id="myForm" class="needs-validation" novalidate action="/student/industry_connect" data-isinsertmode=<%=isInsertMode%>>
-            <div class="container-fluid">
+    <div class="container-fluid px-5 pt-2">
+        <section id="form">
+            <form id="myForm" class="needs-validation" novalidate action="/student/industry_connect"
+                data-isinsertmode=<%=isInsertMode%>>
+
                 <div class="row data-row">
                     <div class="col-md-8 mb-3">
                         <h4 class="mb-3 title">Academia/Industry Connect Activities Attended Data Entry</h4>
@@ -65,21 +66,22 @@
                 <div class="row data-row">
                     <div class="col-md-6 mb-3">
                         <label class="required">Activity Type</label>
-                        <select name="activityType" class="custom-select d-block w-100" id="selectBox" onchange="changeFunc();" required>
-                          <option value="">Choose...</option>
-                          <option>Training Programmes</option>
-                          <option>Guest Lecture</option>
-                          <option>Expert Lecture(Industry Connect)</option>
-                          <option>Workshops</option>
-                          <option>Seminars</option>
-                          <option>FDP</option>
-                          <option>Conference</option>
-                          <option>Symposium</option>
-                          <option>Industry Visits</option>
-                          <option>NCC</option>
-                          <option>NSS</option>
-                          <option>Placement Talk</option>
-                          <option value="others">Others</option>
+                        <select name="activityType" class="custom-select d-block w-100" id="selectBox"
+                            onchange="changeFunc();" required>
+                            <option value="">Choose...</option>
+                            <option>Training Programmes</option>
+                            <option>Guest Lecture</option>
+                            <option>Expert Lecture(Industry Connect)</option>
+                            <option>Workshops</option>
+                            <option>Seminars</option>
+                            <option>FDP</option>
+                            <option>Conference</option>
+                            <option>Symposium</option>
+                            <option>Industry Visits</option>
+                            <option>NCC</option>
+                            <option>NSS</option>
+                            <option>Placement Talk</option>
+                            <option value="others">Others</option>
                         </select>
                         <input name="activityType" placeholder="Mention Here..." class="form-control other-text"
                             type="text" style="display: none" id="textboxes">
@@ -90,15 +92,15 @@
                     <div class="col-md-6 mb-3">
                         <label class="required">Activity Level</label>
                         <select name="activityLevel" class="custom-select d-block w-100" required>
-                          <option value="">Choose...</option>
-                          <option>National</option>
-                          <option>International</option>
+                            <option value="">Choose...</option>
+                            <option>National</option>
+                            <option>International</option>
                         </select>
                         <div class="invalid-feedback">
-                          Please select a valid activity level.
+                            Please select a valid activity level.
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="row data-row">
                     <div class="col-md-6 mb-3">
                         <label class="required">Benefits in terms of learning/Skills/Knowledge obtained</label>
@@ -112,43 +114,48 @@
                         <!-- COE -->
                         <%- include ("../partials/coe") %>
 
-                        <div class="invalid-feedback">
-                            Please select a valid type.
-                        </div>
+                            <div class="invalid-feedback">
+                                Please select a valid type.
+                            </div>
 
                     </div>
                 </div>
 
 
 
-
-                <%- include ("../partials/description") %>
-                <div class="submit-button">
-                    <%if(isInsertMode){%>
-                    <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                      Submit</button>
-                    <%} else{%>
-                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                      Update</button>
-                    <span id='variableJSON' hidden>
-                      <%= JSON.stringify(data); %>
-                    </span>
-                    <%}%>
-                  </div>
-            </div>
-        </form>
-    </section>
+                <div class="row data-row">
+                    <div class="col-md-12 mb-3">
+                        <%- include ("../partials/description") %>
 
 
-</div>
+                            <div class="submit-button">
+                                <%if(isInsertMode){%>
+                                    <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                                        Submit</button>
+                                    <%} else{%>
+                                        <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                                            Update</button>
+                                        <span id='variableJSON' hidden>
+                                            <%= JSON.stringify(data); %>
+                                        </span>
+                                        <%}%>
+                            </div>
+                    </div>
+                </div>
 
-<!-- Footer -->
-<%- include ("../partials/footer") %>
+            </form>
+        </section>
 
 
-<script type="text/javascript" src="/js/date.js"></script>
+    </div>
+
+    <!-- Footer -->
+    <%- include ("../partials/footer") %>
 
 
-</body>
+        <script type="text/javascript" src="/js/date.js"></script>
 
-</html>
+
+        </body>
+
+        </html>

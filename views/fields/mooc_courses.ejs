@@ -1,114 +1,120 @@
 <%- include ("../partials/header") %>
 
-    <div class="container-fluid">
+    <div class="container-fluid px-5 pt-2">
         <section id="form">
             <form id="myForm" class="needs-validation" novalidate action="/students/mooc"
                 data-isinsertmode=<%=isInsertMode%>>
-                <div class="container-fluid">
-                    <div class="row data-row">
-                        <div class="col-md-8 mb-3">
-                            <h4 class="mb-3 title">MOOC Data Entry</h4>
-                        </div>
-                        <div class="col-md-4 mb-3 report">
-                            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+
+                <div class="row data-row">
+                    <div class="col-md-8 mb-3">
+                        <h4 class="mb-3 title">MOOC Data Entry</h4>
+                    </div>
+                    <div class="col-md-4 mb-3 report">
+                        <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+                </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">USN</label>
+                        <input type="text" name="usn" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Valid USN is required.
                         </div>
                     </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">USN</label>
-                            <input type="text" name="usn" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Valid USN is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Topic</label>
-                            <input type="text" name="courseName" class="form-control" required>
-                            <div class="invalid-feedback">
-                                Valid course name is required.
-                            </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Topic</label>
+                        <input type="text" name="courseName" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Valid course name is required.
                         </div>
                     </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Department</label>
-                            <%- include ("../partials/departments") %>
+                </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Department</label>
+                        <%- include ("../partials/departments") %>
                             <div class="invalid-feedback">
                                 Valid department is required.
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Registered In</label>
-                            <select name="agency" class="custom-select d-block w-100" onChange="changeFunc();"
-                                id="selectBox" required>
-                                <option value="">Choose...</option>
-                                <option>NPTEL</option>
-                                <option>Coursera</option>
-                                <option>CMRIT</option>
-                                <option value="others">Others</option>
-                            </select>
-                            <input name="agency" placeholder="Mention Here..." class="form-control other-text"
-                                type="text" style="display: none" id="textboxes">
-                            <div class="invalid-feedback">
-                                Valid agency is required.
-                            </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Registered In</label>
+                        <select name="agency" class="custom-select d-block w-100" onChange="changeFunc();"
+                            id="selectBox" required>
+                            <option value="">Choose...</option>
+                            <option>NPTEL</option>
+                            <option>Coursera</option>
+                            <option>CMRIT</option>
+                            <option value="others">Others</option>
+                        </select>
+                        <input name="agency" placeholder="Mention Here..." class="form-control other-text" type="text"
+                            style="display: none" id="textboxes">
+                        <div class="invalid-feedback">
+                            Valid agency is required.
                         </div>
                     </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Start Date</label>
-                            <input type="date" name="startDate" class="date__control start__date form-control" required>
-                            <div class="invalid-feedback">
-                                Valid start date is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="required">End Date</label>
-                            <input type="date" class="date__control end__date form-control" name="endDate" required>
-                            <div class="invalid-feedback">
-                                Valid end date is required.
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row data-row">
-                        <div class="col-md-6 mb-3">
-                            <label class="required">Applied for exam</label>
-                            <select name="boolExam" class="custom-select d-block w-100" required>
-                                <option value="">Choose...</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid option.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label>COE</label>
-                            <!-- COE -->
-                            <%- include ("../partials/coe") %>
-
-                        </div>
-                    </div>
-
-
-
-
-                    <%- include ("../partials/description") %>
-                        <div class="submit-button">
-                            <%if(isInsertMode){%>
-                                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                                    Submit</button>
-                                <%} else{%>
-                                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                                        Update</button>
-                                    <span id='variableJSON' hidden>
-                                        <%= JSON.stringify(data); %>
-                                    </span>
-                                    <%}%>
-                        </div>
                 </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Start Date</label>
+                        <input type="date" name="startDate" class="date__control start__date form-control" required>
+                        <div class="invalid-feedback">
+                            Valid start date is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="required">End Date</label>
+                        <input type="date" class="date__control end__date form-control" name="endDate" required>
+                        <div class="invalid-feedback">
+                            Valid end date is required.
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row data-row">
+                    <div class="col-md-6 mb-3">
+                        <label class="required">Applied for exam</label>
+                        <select name="boolExam" class="custom-select d-block w-100" required>
+                            <option value="">Choose...</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid option.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>COE</label>
+                        <!-- COE -->
+                        <%- include ("../partials/coe") %>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="row data-row">
+                    <div class="col-md-12 mb-3">
+                        <%- include ("../partials/description") %>
+
+
+                            <div class="submit-button">
+                                <%if(isInsertMode){%>
+                                    <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                                        Submit</button>
+                                    <%} else{%>
+                                        <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                                            Update</button>
+                                        <span id='variableJSON' hidden>
+                                            <%= JSON.stringify(data); %>
+                                        </span>
+                                        <%}%>
+                            </div>
+                    </div>
+                </div>
+
             </form>
         </section>
 

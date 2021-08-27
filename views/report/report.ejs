@@ -27,7 +27,7 @@
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid px-5 pt-2">
         <div class="row report-header">
             <div class="col-md-8 mb-3">
                 <h4 class="mb-3 title">
@@ -46,95 +46,96 @@
         <% event.forEach((event,j)=>{ %>
 
 
-        <h5 class="report-title" id="event-name-<%=j%>" style="display : none;">
-            <%=event%> REPORT :
-        </h5>
+            <h5 class="report-title" id="event-name-<%=j%>" style="display : none;">
+                <%=event%> REPORT :
+            </h5>
 
-        <%let i=1%>
+            <%let i=1%>
 
-        <% data[j].forEach((obj)=>{ %>
-
-
-        <div class="row data-row table__row">
-
-            <table id="table-data" class="table" border="1" data-id="<%=j%>">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <% Object.keys(data[j][0]).forEach(key=> { %>
-                        <%if(key==='description' || key==='id'){%>
-                        <th style="display:none;">
-                        </th>
+                <% data[j].forEach((obj)=>{ %>
 
 
-                        <%}else{%>
-                        <th scope="col" class=column__name data-column__name="<%=key%>">
-                        </th>
-                        <%}%>
-                                                                    <% }) %>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                    </tr>
+                    <div class="row data-row table__row">
 
-                </thead>
+                        <table id="table-data" class="table" border="1" data-id="<%=j%>">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <% Object.keys(data[j][0]).forEach(key=> { %>
+                                        <%if(key==='description' || key==='id' ){%>
+                                            <th style="display:none;">
+                                            </th>
 
-                <%const object=JSON.parse(JSON.stringify(obj))%>
 
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            <%=i++%>
-                        </th>
-                        <%Object.entries(object).forEach(([key,value])=> { %>
-                        <%if(key==='description' || key==='id'){%>
-                        <td style="display:none;">
-                            <%=value%>
-                        </td>
+                                            <%}else{%>
+                                                <th scope="col" class=column__name data-column__name="<%=key%>">
+                                                </th>
+                                                <%}%>
+                                                    <% }) %>
+                                                        <th scope="col">Edit</th>
+                                                        <th scope="col">Delete</th>
+                                </tr>
 
-                        <%}else{%>
-                        <td class="column__data" data-column__data="<%=value%>">
-                            <!-- <%=value%> -->
-                            <%}%>
-                                                                                            
+                            </thead>
+
+                            <%const object=JSON.parse(JSON.stringify(obj))%>
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <%=i++%>
+                                        </th>
+                                        <%Object.entries(object).forEach(([key,value])=> { %>
+                                            <%if(key==='description' || key==='id' ){%>
+                                                <td style="display:none;">
+                                                    <%=value%>
+                                                </td>
+
+                                                <%}else{%>
+                                                    <td class="column__data" data-column__data="<%=value%>">
+                                                        <!-- <%=value%> -->
+                                                        <%}%>
+
+                                                    </td>
+                                                    <%})%>
+
+
+                                                        <td>
+                                                            <button data-id1="<%=j%>" data-id2="<%=i%>"
+                                                                class="btn btn-primary edit__entry">Edit</button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-danger delete__entry">Delete</button>
+                                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                                <tfoot class="table__footer" style="display : none"
+                                    data-isdescriptionrequired="<%=isDescriptionRequired%>">
+                                    <tr>
+                                        <td colspan="100" class="table__description"
+                                            data-description="<%=object.description%>">
+                                            <!-- Place the data here if description is required -->
                                         </td>
-                                        <%})%>
+                                    </tr>
 
 
-                        <td>
-                            <button data-id1="<%=j%>" data-id2="<%=i%>"
-                                class="btn btn-primary edit__entry">Edit</button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger delete__entry">Delete</button>
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-                <tfoot class="table__footer" style="display : none"
-                    data-isdescriptionrequired="<%=isDescriptionRequired%>">
-                    <tr>
-                        <td colspan="100" class="table__description" data-description="<%=object.description%>">
-                            <!-- Place the data here if description is required -->
-                        </td>
-                    </tr>
+                                </tfoot>
 
 
-                </tfoot>
-
-
-            </table>
-        </div>
+                        </table>
+                    </div>
 
 
 
-        <% }) %>
+                    <% }) %>
 
 
 
 
-        <% }) %>
+                        <% }) %>
 
 
     </div>

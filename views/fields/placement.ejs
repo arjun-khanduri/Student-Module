@@ -1,137 +1,143 @@
 <%- include ("../partials/header") %>
 
   <!-- Data Entry -->
-  <div class="container-fluid">
+  <div class="container-fluid px-5 pt-2">
     <section id="form">
       <form id="myForm" class="needs-validation" novalidate action="/students/placement"
         data-isinsertmode=<%=isInsertMode%>>
-        <div class="container-fluid">
-          <div class="row data-row">
-            <div class="col-md-8 mb-3">
-              <h4 class="mb-3 title">Placement Data Entry</h4>
+
+        <div class="row data-row">
+          <div class="col-md-8 mb-3">
+            <h4 class="mb-3 title">Placement Data Entry</h4>
+          </div>
+          <div class="col-md-4 mb-3 report">
+            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required" class="required">Student Name</label>
+            <input type="text" name="studentName" class="form-control">
+            <div class="invalid-feedback">
+              Valid Student name is required.
             </div>
-            <div class="col-md-4 mb-3 report">
-              <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">USN</label>
+            <input type="text" class="form-control" name="usn">
+            <div class="invalid-feedback">
+              Valid USN is required.
             </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Company Name</label>
+            <input type="text" class="form-control" name="companyName">
+            <div class="invalid-feedback">
+              Valid company name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Salary</label>
+            <input type="number" class="form-control" name="salary">
+            <div class="invalid-feedback">
+              Valid Salary is required.
+            </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Drive Date</label>
+            <input type="date" class="date__control form-control" name="date">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Drive Type</label>
+            <select class="custom-select d-block w-100" name="driveType">
+              <option value="">Choose...</option>
+              <option>On Campus</option>
+              <option>Off Campus</option>
+            </select>
+
+            <div class="invalid-feedback">
+              Placement Drive required.
+            </div>
+          </div>
+
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Company Type</label>
+            <select class="custom-select d-block w-100" name="companyType">
+              <option value="">Choose...</option>
+              <option>Indian Company</option>
+              <option>Foreign Company</option>
+            </select>
+            <div class="invalid-feedback">
+              Please provide a valid company name.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Type</label>
+            <select name="type" class="custom-select d-block w-100" id="type" required="">
+              <option value="">Choose...</option>
+              <option>Placement</option>
+              <option>Internship</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid type.
+            </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label for="type" class="required">Department</label>
+            <%- include ("../partials/departments") %>
 
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required" class="required">Student Name</label>
-              <input type="text" name="studentName" class="form-control">
-              <div class="invalid-feedback">
-                Valid Student name is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">USN</label>
-              <input type="text" class="form-control" name="usn">
-              <div class="invalid-feedback">
-                Valid USN is required.
-              </div>
-            </div>
-          </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Company Name</label>
-              <input type="text" class="form-control" name="companyName">
-              <div class="invalid-feedback">
-                Valid company name is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Salary</label>
-              <input type="number" class="form-control" name="salary">
-              <div class="invalid-feedback">
-                Valid Salary is required.
-              </div>
-            </div>
-          </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Drive Date</label>
-              <input type="date" class="date__control form-control" name="date">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Drive Type</label>
-              <select class="custom-select d-block w-100" name="driveType">
-                <option value="">Choose...</option>
-                <option>On Campus</option>
-                <option>Off Campus</option>
-              </select>
 
-              <div class="invalid-feedback">
-                Placement Drive required.
-              </div>
-            </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">COE</label>
+            <!-- COE -->
+            <%- include ("../partials/coe") %>
 
-          </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Company Type</label>
-              <select class="custom-select d-block w-100" name="companyType">
-                <option value="">Choose...</option>
-                <option>Indian Company</option>
-                <option>Foreign Company</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid company name.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Type</label>
-              <select name="type" class="custom-select d-block w-100" id="type" required="">
-                <option value="">Choose...</option>
-                <option>Placement</option>
-                <option>Internship</option>
-              </select>
               <div class="invalid-feedback">
                 Please select a valid type.
               </div>
-            </div>
+
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label for="type" class="required">Department</label>
-              <%- include ("../partials/departments") %>
-
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label class="required">COE</label>
-              <!-- COE -->
-              <%- include ("../partials/coe") %>
-
-                <div class="invalid-feedback">
-                  Please select a valid type.
-                </div>
-
-            </div>
-            <!-- <div class="col-md-4 mb-3">
+          <!-- <div class="col-md-4 mb-3">
               <label class="required">Submission Date</label>
               <input type="date" class="form-control" name="filterDate">
               <div class="invalid-feedback">
                 Please select a valid date.
               </div>
             </div> -->
-          </div>
-          <%- include ("../partials/description") %>
-            <div class="submit-button">
-              <%if(isInsertMode){%>
-                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                  Submit</button>
-                <%} else{%>
-                  <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                    Update</button>
-                  <span id='variableJSON' hidden>
-                    <%= JSON.stringify(data); %>
-                  </span>
-                  <%}%>
-            </div>
         </div>
-      </form>
-    </section>
+        <div class="row data-row">
+          <div class="col-md-12 mb-3">
+            <%- include ("../partials/description") %>
+
+
+              <div class="submit-button">
+                <%if(isInsertMode){%>
+                  <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                    Submit</button>
+                  <%} else{%>
+                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                      Update</button>
+                    <span id='variableJSON' hidden>
+                      <%= JSON.stringify(data); %>
+                    </span>
+                    <%}%>
+              </div>
+          </div>
+        </div>
+  </div>
+
+  </section>
 
 
   </div>
