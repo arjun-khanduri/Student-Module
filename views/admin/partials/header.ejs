@@ -56,7 +56,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -68,36 +68,28 @@
 
 
             <!-- Nav Item - Dashboard -->
-            <li <% if (title === 'Dashboard') { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
-                <a class="nav-link" href="/admin">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+            <li <% if (title==='Dashboard' ) { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
+                        <a class="nav-link" href="/admin">
+                            <i class="fas fa-fw fa-tachometer-alt"></i>
+                            <span>Dashboard</span></a>
             </li>
 
-            <li <% if (title === 'Add User') { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
-                <a class="nav-link" href="/add-user">
-                    <i class="fas fa-user-plus"></i>
-                    <span>Add User</span></a>
+            <li <% if (title==='Add User' ) { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
+                        <a class="nav-link" href="/add-user">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add User</span></a>
             </li>
 
-            <li <% if (title === 'roles') { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
-                <a class="nav-link" href="/admin/roles">
-                    <i class="fas fa-tasks"></i>
-                    <span>Manage Roles</span></a>
+            <li <% if (title==='roles' ) { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
+                        <a class="nav-link" href="/admin/roles">
+                            <i class="fas fa-tasks"></i>
+                            <span>Manage Roles</span></a>
             </li>
-            <li <% if (title === 'remove-user') { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
-                <a class="nav-link" href="/admin/remove-user">
-                    <i class="fas fa-user-times"></i>
-                    <span>Remove User</span></a>
+            <li <% if (title==='remove-user' ) { %> class="nav-item active" <% } else { %> class="nav-item" <% } %>>
+                        <a class="nav-link" href="/admin/remove-user">
+                            <i class="fas fa-user-times"></i>
+                            <span>Remove User</span></a>
             </li>
-
-
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline sidebar-button">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
 
         </ul>
         <!-- End of Sidebar -->
@@ -110,11 +102,6 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow ">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
                     <div id="img-logo" class="nav-item">
                         <a href="/"><img class="img-profile img-logo" src="/img/college-logo.png"></a>
                     </div>

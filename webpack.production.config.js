@@ -11,7 +11,6 @@ module.exports = {
       "./public/js/utils/Utils.js",
       "./public/js/utils/Textbox.js",
       "./public/js/utils/Date.js",
-      "./public/js/utils/Sidebar.js",
     ],
   },
   output: {

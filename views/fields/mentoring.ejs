@@ -1,140 +1,140 @@
 <%- include ("../partials/header") %>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid px-5 pt-2">
 
     <section id="form">
       <form id="myForm" class="needs-validation" novalidate action="/students/mentoring"
         data-isinsertmode=<%=isInsertMode%>>
-        <div class="container-fluid">
 
-          <!-- Header Section -->
 
-          <div class="row data-row">
-            <div class="col-md-8 mb-3">
-              <h4 class="mb-3 title">Mentoring Data Entry</h4>
-            </div>
-            <div class="col-md-4 mb-3 report">
-              <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-            </div>
-          </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">USN</label>
-              <input type="text" name="usn" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid USN is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Name</label>
-              <input type="text" name="name" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid name is required.
-              </div>
-            </div>
-          </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Contact No.</label>
-              <input type="text" name="contact" class="form-control" minlength="10" maxlength="10" required>
-              <div class="invalid-feedback">
-                Valid contact number is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Email</label>
-              <input type="email" name="email" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid email is required.
-              </div>
-            </div>
-          </div>
-          <div class="row data-row">
-            <div class="col-md-4 mb-3">
-              <label class="required">Parent/Guardian Name</label>
-              <input type="text" name="parentName" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid parent/guardian name is required.
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">Parent Contact No.</label>
-              <input type="text" name="parentContact" class="form-control" minlength="10" maxlength="10" required>
-              <div class="invalid-feedback">
-                Valid parent contact number is required.
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">Parent Email</label>
-              <input type="email" name="parentEmail" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid parent email is required.
-              </div>
-            </div>
-          </div>
+        <!-- Header Section -->
 
-          <div class="row data-row">
-            <div class="col-md-4 mb-3">
-              <label class="required">IAT 1 Marks</label>
-              <input type="number" name="marksIAT1" class="form-control" min="0" max="50" required>
-              <div class="invalid-feedback">
-                Valid marks required.
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">IAT 2 Marks</label>
-              <input type="number" name="marksIAT2" class="form-control" min="0" max="50" required>
-              <div class="invalid-feedback">
-                Valid marks required.
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">IAT 3 Marks</label>
-              <input type="number" name="marksIAT3" class="form-control" min="0" max="50" required>
-              <div class="invalid-feedback">
-                Valid marks required.
-              </div>
+        <div class="row data-row">
+          <div class="col-md-8 mb-3">
+            <h4 class="mb-3 title">Mentoring Data Entry</h4>
+          </div>
+          <div class="col-md-4 mb-3 report">
+            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">USN</label>
+            <input type="text" name="usn" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid USN is required.
             </div>
           </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Name</label>
+            <input type="text" name="name" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid name is required.
+            </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Contact No.</label>
+            <input type="text" name="contact" class="form-control" minlength="10" maxlength="10" required>
+            <div class="invalid-feedback">
+              Valid contact number is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Email</label>
+            <input type="email" name="email" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid email is required.
+            </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-4 mb-3">
+            <label class="required">Parent/Guardian Name</label>
+            <input type="text" name="parentName" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid parent/guardian name is required.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="required">Parent Contact No.</label>
+            <input type="text" name="parentContact" class="form-control" minlength="10" maxlength="10" required>
+            <div class="invalid-feedback">
+              Valid parent contact number is required.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="required">Parent Email</label>
+            <input type="email" name="parentEmail" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid parent email is required.
+            </div>
+          </div>
+        </div>
 
-          <div class="row data-row">
-            <div class="col-md-4 mb-3">
-              <label class="required">IAT 1 Attendance</label>
-              <select name="attendanceIAT1" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>Present</option>
-                <option>Absent</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid option.
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">IAT 2 Attendance</label>
-              <select name="attendanceIAT2" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>Present</option>
-                <option>Absent</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid option.
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label class="required">IAT 3 Attendance</label>
-              <select name="attendanceIAT3" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>Present</option>
-                <option>Absent</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid option.
-              </div>
+        <div class="row data-row">
+          <div class="col-md-4 mb-3">
+            <label class="required">IAT 1 Marks</label>
+            <input type="number" name="marksIAT1" class="form-control" min="0" max="50" required>
+            <div class="invalid-feedback">
+              Valid marks required.
             </div>
           </div>
-          <!-- <div class="col-md-6 mb-3">
+          <div class="col-md-4 mb-3">
+            <label class="required">IAT 2 Marks</label>
+            <input type="number" name="marksIAT2" class="form-control" min="0" max="50" required>
+            <div class="invalid-feedback">
+              Valid marks required.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="required">IAT 3 Marks</label>
+            <input type="number" name="marksIAT3" class="form-control" min="0" max="50" required>
+            <div class="invalid-feedback">
+              Valid marks required.
+            </div>
+          </div>
+        </div>
+
+        <div class="row data-row">
+          <div class="col-md-4 mb-3">
+            <label class="required">IAT 1 Attendance</label>
+            <select name="attendanceIAT1" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>Present</option>
+              <option>Absent</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid option.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="required">IAT 2 Attendance</label>
+            <select name="attendanceIAT2" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>Present</option>
+              <option>Absent</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid option.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="required">IAT 3 Attendance</label>
+            <select name="attendanceIAT3" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>Present</option>
+              <option>Absent</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid option.
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 mb-3">
               <div class="form-group">
                 <label>COE</label>
                 <%- include ("../partials/coe") %>
@@ -145,22 +145,26 @@
               </div>
             </div> -->
 
-          <%- include ("../partials/description") %>
+        <div class="row data-row">
+          <div class="col-md-12 mb-3">
+            <%- include ("../partials/description") %>
 
 
-            <div class="submit-button">
-              <%if(isInsertMode){%>
-                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                  Submit</button>
-                <%} else{%>
-                  <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                    Update</button>
-                  <span id='variableJSON' hidden>
-                    <%= JSON.stringify(data); %>
-                  </span>
-                  <%}%>
-            </div>
+              <div class="submit-button">
+                <%if(isInsertMode){%>
+                  <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                    Submit</button>
+                  <%} else{%>
+                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                      Update</button>
+                    <span id='variableJSON' hidden>
+                      <%= JSON.stringify(data); %>
+                    </span>
+                    <%}%>
+              </div>
+          </div>
         </div>
+
 
 
 

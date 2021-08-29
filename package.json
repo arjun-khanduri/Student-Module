@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon server.js -e ejs,js --ignore 'public/'",
     "dev": "webpack --watch --config webpack.dev.config.js",
-    "prod": "webpack  --config webpack.production.config.js"
+    "prod": "webpack  --config webpack.production.config.js",
+    "seeddb": "node db/seedDB.js",
+    "seeddb-prod": "node db/createDB && npm run seeddb"
   },
   "repository": {
     "type": "git",

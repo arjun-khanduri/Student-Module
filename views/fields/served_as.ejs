@@ -1,94 +1,94 @@
 <%- include ("../partials/header") %>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid px-5 pt-2">
 
     <section id="form">
       <form id="myForm" class="needs-validation" novalidate action="/students/served_as"
         data-isinsertmode=<%=isInsertMode%>>
-        <div class="container-fluid">
 
-          <!-- Header Section -->
 
-          <div class="row data-row">
-            <div class="col-md-8 mb-3">
-              <h4 class="mb-3 title">Student Served As Data Entry</h4>
-            </div>
-            <div class="col-md-4 mb-3 report">
-              <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-            </div>
+        <!-- Header Section -->
+
+        <div class="row data-row">
+          <div class="col-md-8 mb-3">
+            <h4 class="mb-3 title">Student Served As Data Entry</h4>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">University/College Name</label>
-                <input type="text" name="collegeName" class="form-control" required>
-                <div class="invalid-feedback">
-                  Valid University/College name is required.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">Event Name</label>
-                <input type="text" name="eventName" class="form-control" required>
-                <div class="invalid-feedback">
-                  Valid Event Name is required.
-                </div>
-              </div>
-            </div>
+          <div class="col-md-4 mb-3 report">
+            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Start Date</label>
-              <input type="date" name="startDate" class="date__control start__date form-control" required>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">University/College Name</label>
+              <input type="text" name="collegeName" class="form-control" required>
               <div class="invalid-feedback">
-                Valid start date is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">End Date</label>
-              <input type="date" name="endDate" class="date__control end__date form-control" required>
-              <div class="invalid-feedback">
-                Valid end date is required.
+                Valid University/College name is required.
               </div>
             </div>
           </div>
-
-          <div class="row data-row">
-
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label class="required">Served As</label>
-                <select name="servedAs" class="custom-select d-block w-100" id="selectBox" onChange="changeFunc();"
-                  required>
-                  <option value="">Choose...</option>
-                  <option>Resource Persons</option>
-                  <option>Evaluator</option>
-                  <option value="others">Others</option>
-                </select>
-                <input name="servedAs" placeholder="Mention Here..." class="form-control other-text" type="text"
-                  style="display: none" id="textboxes">
-                <div class="invalid-feedback">
-                  Please select a valid prize.
-                </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">Event Name</label>
+              <input type="text" name="eventName" class="form-control" required>
+              <div class="invalid-feedback">
+                Valid Event Name is required.
               </div>
             </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label>COE</label>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Start Date</label>
+            <input type="date" name="startDate" class="date__control start__date form-control" required>
+            <div class="invalid-feedback">
+              Valid start date is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">End Date</label>
+            <input type="date" name="endDate" class="date__control end__date form-control" required>
+            <div class="invalid-feedback">
+              Valid end date is required.
+            </div>
+          </div>
+        </div>
 
-                <!-- COE -->
-                <%- include ("../partials/coe") %>
+        <div class="row data-row">
 
-                  <div class="invalid-feedback">
-                    Please provide a valid type.
-                  </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label class="required">Served As</label>
+              <select name="servedAs" class="custom-select d-block w-100" id="selectBox" onChange="changeFunc();"
+                required>
+                <option value="">Choose...</option>
+                <option>Resource Persons</option>
+                <option>Evaluator</option>
+                <option value="others">Others</option>
+              </select>
+              <input name="servedAs" placeholder="Mention Here..." class="form-control other-text" type="text"
+                style="display: none" id="textboxes">
+              <div class="invalid-feedback">
+                Please select a valid prize.
               </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label>COE</label>
+
+              <!-- COE -->
+              <%- include ("../partials/coe") %>
+
+                <div class="invalid-feedback">
+                  Please provide a valid type.
+                </div>
+            </div>
 
 
-              <!-- <div class="col-md-6 mb-3">
+            <!-- <div class="col-md-6 mb-3">
 
               <label class="required">Submission Date</label>
               <input type="date" class="form-control" name="filterDate" required>
@@ -99,24 +99,28 @@
             </div> -->
 
 
-            </div>
           </div>
-          <%- include ("../partials/description") %>
-
-
-            <div class="submit-button">
-              <%if(isInsertMode){%>
-                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                  Submit</button>
-                <%} else{%>
-                  <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                    Update</button>
-                  <span id='variableJSON' hidden>
-                    <%= JSON.stringify(data); %>
-                  </span>
-                  <%}%>
-            </div>
         </div>
+        <div class="row data-row">
+          <div class="col-md-12 mb-3">
+            <%- include ("../partials/description") %>
+
+
+              <div class="submit-button">
+                <%if(isInsertMode){%>
+                  <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                    Submit</button>
+                  <%} else{%>
+                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                      Update</button>
+                    <span id='variableJSON' hidden>
+                      <%= JSON.stringify(data); %>
+                    </span>
+                    <%}%>
+              </div>
+          </div>
+        </div>
+
 
 
 

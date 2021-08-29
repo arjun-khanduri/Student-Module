@@ -1,165 +1,165 @@
 <%- include ("../partials/header") %>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid px-5 pt-2">
 
     <section id="form">
       <form id="myForm" class="needs-validation" novalidate action="/students/patents"
         data-isinsertmode=<%=isInsertMode%>>
-        <div class="container-fluid">
 
-          <!-- Header Section -->
 
-          <div class="row data-row">
-            <div class="col-md-8 mb-3">
-              <h4 class="mb-3 title">Patents Data Entry</h4>
-            </div>
-            <div class="col-md-4 mb-3 report">
-              <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
-                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+        <!-- Header Section -->
+
+        <div class="row data-row">
+          <div class="col-md-8 mb-3">
+            <h4 class="mb-3 title">Patents Data Entry</h4>
+          </div>
+          <div class="col-md-4 mb-3 report">
+            <a href="/student/search" class="btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+        </div>
+
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">RCID</label>
+            <input type="text" name="rcid" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid RCID is required.
             </div>
           </div>
-
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">RCID</label>
-              <input type="text" name="rcid" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid RCID is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Title</label>
-              <input type="text" name="title" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid title is required.
-              </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Title</label>
+            <input type="text" name="title" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid title is required.
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Name Of The Agency To Whom Submitted</label>
-              <input type="text" name="agencyName" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid agency name is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Submission Number</label>
-              <input type="number" name="submissionNumber" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid submission number is required.
-              </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Name Of The Agency To Whom Submitted</label>
+            <input type="text" name="agencyName" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid agency name is required.
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Patent number after published Objectives</label>
-              <input type="number" name="patentNumber" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid patent number is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Benefit in terms of learning/Skill/Knowledge obtained</label>
-              <input type="text" name="benefits" class="form-control" required>
-              <div class="invalid-feedback">
-                Valid benefits required.
-              </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Submission Number</label>
+            <input type="number" name="submissionNumber" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid submission number is required.
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label>Grant Amount Received</label>
-              <input type="number" name="grantAmount" class="form-control">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label>Earnings from Patents</label>
-              <input type="number" name="earnings" class="form-control">
-            </div>
-          </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Patent Level</label>
-              <select name="patentLevel" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>National</option>
-                <option>International</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid patent level.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Commercialized</label>
-              <select name="commercialized" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid option.
-              </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Patent number after published Objectives</label>
+            <input type="number" name="patentNumber" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid patent number is required.
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Status</label>
-              <select name="status" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>Submitted</option>
-                <option>Published</option>
-                <option>Granted</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid status.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Patent Specification</label>
-              <select name="specification" class="custom-select d-block w-100" required>
-                <option value="">Choose...</option>
-                <option>Complete</option>
-                <option>Provisional</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid option.
-              </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Benefit in terms of learning/Skill/Knowledge obtained</label>
+            <input type="text" name="benefits" class="form-control" required>
+            <div class="invalid-feedback">
+              Valid benefits required.
             </div>
           </div>
-          <div class="row data-row">
-            <div class="col-md-6 mb-3">
-              <label class="required">Date of Grant</label>
-              <input type="date" name="grantDate" class="date__control form-control" required>
-              <div class="invalid-feedback">
-                Valid grant date is required.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="required">Submission Date</label>
-              <input type="date" class="date__control form-control" name="submissionDate" required>
-              <div class="invalid-feedback">
-                Valid submission date is required.
-              </div>
-
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label>Grant Amount Received</label>
+            <input type="number" name="grantAmount" class="form-control">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Earnings from Patents</label>
+            <input type="number" name="earnings" class="form-control">
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Patent Level</label>
+            <select name="patentLevel" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>National</option>
+              <option>International</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid patent level.
             </div>
           </div>
-          <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Commercialized</label>
+            <select name="commercialized" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid option.
+            </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Status</label>
+            <select name="status" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>Submitted</option>
+              <option>Published</option>
+              <option>Granted</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid status.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Patent Specification</label>
+            <select name="specification" class="custom-select d-block w-100" required>
+              <option value="">Choose...</option>
+              <option>Complete</option>
+              <option>Provisional</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid option.
+            </div>
+          </div>
+        </div>
+        <div class="row data-row">
+          <div class="col-md-6 mb-3">
+            <label class="required">Date of Grant</label>
+            <input type="date" name="grantDate" class="date__control form-control" required>
+            <div class="invalid-feedback">
+              Valid grant date is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="required">Submission Date</label>
+            <input type="date" class="date__control form-control" name="submissionDate" required>
+            <div class="invalid-feedback">
+              Valid submission date is required.
+            </div>
 
-            <div class="col-md-12 mb-3">
-              <div class="form-group">
-                <label>COE</label>
+          </div>
+        </div>
+        <div class="row data-row">
 
-                <!-- COE -->
-                <%- include ("../partials/coe") %>
+          <div class="col-md-12 mb-3">
+            <div class="form-group">
+              <label>COE</label>
 
-                  <div class="invalid-feedback">
-                    Please provide a valid type.
-                  </div>
-              </div>
+              <!-- COE -->
+              <%- include ("../partials/coe") %>
+
+                <div class="invalid-feedback">
+                  Please provide a valid type.
+                </div>
+            </div>
 
 
-              <!-- <div class="col-md-6 mb-3">
+            <!-- <div class="col-md-6 mb-3">
 
               <label class="required">Submission Date</label>
               <input type="date" class="form-control" name="filterDate" required>
@@ -170,24 +170,28 @@
             </div> -->
 
 
-            </div>
           </div>
-          <%- include ("../partials/description") %>
-
-
-            <div class="submit-button">
-              <%if(isInsertMode){%>
-                <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
-                  Submit</button>
-                <%} else{%>
-                  <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
-                    Update</button>
-                  <span id='variableJSON' hidden>
-                    <%= JSON.stringify(data); %>
-                  </span>
-                  <%}%>
-            </div>
         </div>
+        <div class="row data-row">
+          <div class="col-md-12 mb-3">
+            <%- include ("../partials/description") %>
+
+
+              <div class="submit-button">
+                <%if(isInsertMode){%>
+                  <button class="btn btn-primary btn-lg btn-block buttons" type="submit">
+                    Submit</button>
+                  <%} else{%>
+                    <button class="btn btn-secondary btn-lg btn-block buttons" type="submit">
+                      Update</button>
+                    <span id='variableJSON' hidden>
+                      <%= JSON.stringify(data); %>
+                    </span>
+                    <%}%>
+              </div>
+          </div>
+        </div>
+
 
 
 
