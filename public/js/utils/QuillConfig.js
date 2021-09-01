@@ -1,4 +1,4 @@
-export const quillConfig = {
+export const QUILL_CONFIG = {
   theme: "snow",
   modules: {
     imageResize: {

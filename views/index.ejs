@@ -2,524 +2,493 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Font Awesome -->
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
-  <!-- Google Fonts -->
+  <%- include ("./partials/_link-tags.ejs") %>
 
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
 
-  <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <!-- CSS template for this design -->
-
-  <link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
-
-  <link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
-
-  <link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
 
 
+    <!-- Custom Stylesheet -->
 
-  <!-- Jquery, here we go again -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-
-  <!-- Custom Stylesheet -->
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 
 <body>
-  <div id="content-wrapper" class="d-flex flex-column">
+  <nav class="
+  navbar navbar-expand navbar-light
+  bg-white
+  topbar
+  sticky-top
+  shadow
+  ">
 
-    <!-- Main Content -->
-    <div id="content">
+    <div id="img-logo" class="nav-item">
+      <img class="img-profile img-logo" src="/img/college-logo.png" />
+    </div>
 
-      <!-- Topbar -->
-      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow ">
-        <div id="img-logo" class="nav-item">
-          <img class="img-profile img-logo" src="/img/college-logo.png"></div>
+    <ul class="navbar-nav ml-auto">
 
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
+      <!-- Nav Item - User Information -->
 
-          <!-- Nav Item - User Information -->
-          <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <span id="home-text"><%=Username%></span>
-              <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
-            </a>
-            <!-- Dropdown - User Information -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Settings
-              </a>
+      <li class="nav-item dropdown no-arrow">
 
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
-                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <!-- End of Topbar -->
-
-      <div class="container-fluid ex1">
+        <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <span id="home-text">
+            <%=Username%>
+          </span>
+          <img class="img-profile rounded-circle" src="/img/undraw_profile.svg" />
         </a>
-        <h6 class="heading">Choose the Repository you want to have access to :</h6>
-        <!-- Topic Cards -->
-
-        <div class="grey-bg container-fluid">
-          <section id="minimal-statistics">
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fa fa-industry primary font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/AcademiaIndustryConnectActivitiesAttended">
-                            <h5>Academia/Industry Connect Activities Attended</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fas fa-hands-helping danger font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/AlumniData">
-                            <h5>Alumni Data</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fa fa-book font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-
-                          <a href="/student/Awards">
-                            <h5>Awards</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fa fa-handshake font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/AwardsNssAndNcc">
-                            <h5>Awards and Achievements NSS/NCC</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/BookPublication">
-                            <h5>Book Publication</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="fa fa-play-circle danger font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/BridgeCourses">
-                            <h5>Bridge Courses</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="fa fa-desktop success font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/EntrepreneurshipDetails">
-                            <h5>Entrepreneurship Details</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="fas fa-chalkboard-teacher warning font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/EventsAttended">
-                            <h5>Events Attended</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="fas fa-microscope primary font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fa fa-lightbulb primary font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/ExchangeProgram">
-                            <h5>Exchange Program</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="icon-speech warning font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-
-                          <a href="/student/HigherStudies">
-                            <h5>Higher Studies</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fas fa-file-alt success font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/IdeaRepository">
-                            <h5>Idea Repository</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fas fa-atom danger font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/InternshipCell">
-                            <h5>Internship Cell</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fa fa-check danger font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/JournalAndConferencePublications">
-                            <h5>Journal and Conference Publications</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fas fa-shapes success font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-
-                          <a href="/student/Mentoring">
-                            <h5>Mentoring</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fab fa-black-tie font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/MoocCourses">
-                            <h5>MOOC Courses</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fas fa-business-time danger font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/ParentsMeeting">
-                            <h5>Parents Meeting</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/Patents">
-                            <h5>Patents</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="fas fa-save primary font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/Placement">
-                            <h5>Placement</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="icon-user font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/ProjectsAndMiniProjects">
-                            <h5>Projects/Mini Projects</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="icon-pie-chart warning font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="media-body text-left">
-                          <a href="/student/Results">
-                            <h5>Results (After Reval)</h5>
-                          </a>
-                        </div>
-                        <div class="align-self-center">
-                          <i class="fas fa-users primary font-large-2 float-right"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                  <div class="card-content">
-                    <div class="card-body">
-                      <div class="media d-flex">
-                        <div class="align-self-center">
-                          <i class="fas fa-caravan primary font-large-2 float-left"></i>
-                        </div>
-                        <div class="media-body text-right">
-                          <a href="/student/ServedAs">
-                            <h5>Student Served As</h5>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-
-            <div class="row">
-
-
-
-          </section>
-
-
+        <div class="
+        dropdown-menu dropdown-menu-left
+        shadow
+        animated--grow-in
+      " aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Logout
+          </a>
         </div>
+      </li>
+    </ul>
+  </nav>
+
+
+  <div class="container-fluid px-5 pt-2">
+    </a>
+    <h6 class="heading">Choose the Repository you want to have access to :</h6>
+    <!-- Topic Cards -->
+
+    <section id="minimal-statistics">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fa fa-industry primary font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/AcademiaIndustryConnectActivitiesAttended">
+                      <h5>Academia/Industry Connect Activities Attended</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fas fa-hands-helping danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body">
+                    <a href="/student/AlumniData">
+                      <h5>Alumni Data</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fa fa-book font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+
+                    <a href="/student/Awards">
+                      <h5>Awards</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fa fa-handshake font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/AwardsNssAndNcc">
+                      <h5>Awards and Achievements NSS/NCC</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/BookPublication">
+                      <h5>Book Publication</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="fa fa-play-circle danger font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/BridgeCourses">
+                      <h5>Bridge Courses</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="fa fa-desktop success font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/EntrepreneurshipDetails">
+                      <h5>Entrepreneurship Details</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="fas fa-chalkboard-teacher warning font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/EventsAttended">
+                      <h5>Events Attended</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="fas fa-microscope primary font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fa fa-lightbulb primary font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/ExchangeProgram">
+                      <h5>Exchange Program</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="icon-speech warning font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+
+                    <a href="/student/HigherStudies">
+                      <h5>Higher Studies</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fas fa-file-alt success font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/IdeaRepository">
+                      <h5>Idea Repository</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fas fa-atom danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/InternshipCell">
+                      <h5>Internship Cell</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fa fa-check danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/JournalAndConferencePublications">
+                      <h5>Journal and Conference Publications</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fas fa-shapes success font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+
+                    <a href="/student/Mentoring">
+                      <h5>Mentoring</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fab fa-black-tie font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/MoocCourses">
+                      <h5>MOOC Courses</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fas fa-business-time danger font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/ParentsMeeting">
+                      <h5>Parents Meeting</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/Patents">
+                      <h5>Patents</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="fas fa-save primary font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/Placement">
+                      <h5>Placement</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-user font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/ProjectsAndMiniProjects">
+                      <h5>Projects/Mini Projects</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <a href="/student/Results">
+                      <h5>Results (After Reval)</h5>
+                    </a>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="fas fa-users primary font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="align-self-center">
+                    <i class="fas fa-caravan primary font-large-2 float-left"></i>
+                  </div>
+                  <div class="media-body text-right">
+                    <a href="/student/ServedAs">
+                      <h5>Student Served As</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
       </div>
 
-      <%- include ("./partials/footer") %>
+      <div class="row">
+
+
+
+    </section>
+
+
+
+
+  </div>
+
+  <%- include ("./partials/footer") %>
 </body>
 
 </html>

@@ -57,7 +57,14 @@ function handleRoute(req, res) {
       if (err) console.log(err);
       result.forEach(({ TABLE_NAME }) => {
         let table = TABLE_NAME;
-        if (!(table === "student" || table === "coe" || table === "club_name"))
+        if (
+          !(
+            table === "student" ||
+            table === "coe" ||
+            table === "club_name" ||
+            table === "department"
+          )
+        )
           tables.push(table);
       }); //filter out table
       let data = [];

@@ -29,12 +29,7 @@ const {
   CREATE_CLUB_NAME_TABLE,
 } = require("./dbTable.js");
 
-const CONNECTION_CONFIG = {
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "data_repository_student",
-};
+const { CONNECTION_CONFIG } = require("./config.js");
 
 const seedDatabase = async function () {
   try {

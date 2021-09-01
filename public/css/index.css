@@ -95,5 +95,7 @@ h1.heading {
 
 .media-body h5 {
   color: #264653;
-  font-family: Ubuntu, "sans-serif";
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
 }

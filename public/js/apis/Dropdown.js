@@ -1,16 +1,16 @@
 import axios from "axios";
 
-let flag = 1;
-export const sendGetRequest = async () => {
-  if (flag === 0) return; //Stop the dropdoen from sending multiple get
+import { isInsertMode } from "../utils/Utils";
+
+export const loadDropdown = async (tableName, dropdown) => {
   try {
-    const resp = await axios.get("/dropdown/coe");
+    const resp = await axios.get(`/dropdown/${tableName}`);
     for (const { name } of resp.data) {
       let option = document.createElement("option");
       option.value = name;
       option.text = name.charAt(0).toUpperCase() + name.slice(1);
-      select.appendChild(option);
-      flag = 0;
+
+      dropdown.appendChild(option);
     }
   } catch (err) {
     console.error(err);

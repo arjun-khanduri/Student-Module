@@ -8,12 +8,21 @@ import ImageResize from "quill-image-resize";
 Quill.register("modules/imageUploader", ImageUploader);
 Quill.register("modules/imageResize", ImageResize);
 
-import { quillConfig } from "./QuillConfig";
+import { QUILL_CONFIG } from "./QuillConfig";
 
-import { sendGetRequest } from "../apis/COE";
+const quillContainer = document.querySelector("#editor-container");
 
 export const isInsertMode =
   document.getElementById("myForm")?.dataset.isinsertmode;
+
+export const quill = (function () {
+  if (!quillContainer) return;
+  if (isInsertMode === "true") {
+    QUILL_CONFIG.placeholder = "Write your description here...";
+  }
+  const quill = new Quill("#editor-container", QUILL_CONFIG);
+  return quill;
+})();
 
 /* Show the column name in report page */
 const column__names = document.querySelectorAll(".column__name");
@@ -58,13 +67,6 @@ tables?.forEach((table) => {
   report__title.style.display = "";
 });
 
-if (isInsertMode === "true") {
-  quillConfig.placeholder = "Add Description Here..";
-  let quill = new Quill("#editor-container", quillConfig);
-
-  //Create a new instance of quill in insert page
-}
-
 const editData = (row) => {
   // let eventName = row.dataset.mod;
   let id = row.closest(".table").rows[1].cells[1].innerText.trim(" ");
@@ -97,6 +99,8 @@ table__data?.addEventListener("click", (e) => {
 // Add Data
 
 const add__field = document.querySelector(".add-new");
+const tableName = document.querySelector(".table__name--dropdown")?.dataset
+  .tableName;
 add__field?.addEventListener("click", () => {
   const row = document.querySelector(".hidden-row");
   row.style.display = "";
@@ -127,7 +131,7 @@ add__field?.addEventListener("click", () => {
     const sendPostRequest = async () => {
       try {
         const data = { name: field__name.value };
-        const resp = await axios.post("/dropdown/coe", data);
+        const resp = await axios.post(`/dropdown/${tableName}`, data);
         submit__button.disabled = true;
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         document.getElementById("alert").style.display = "block";
@@ -153,7 +157,9 @@ admin_table__data?.addEventListener("click", (e) => {
     const sendDeleteRequest = async () => {
       try {
         const payload = { id: id };
-        const resp = await axios.delete("/dropdown/coe", { data: payload });
+        const resp = await axios.delete(`/dropdown/${tableName}`, {
+          data: payload,
+        });
         document.body.scrollTop = document.documentElement.scrollTop = 0;
         // document.getElementById("alert").style.display = "block";
         // setTimeout(() => window.location.reload(), 1000);
@@ -167,8 +173,3 @@ admin_table__data?.addEventListener("click", (e) => {
     sendDeleteRequest();
   }
 });
-
-//Handle dropdown menu here
-const select = document.getElementById("select");
-
-select?.addEventListener("click", sendGetRequest);

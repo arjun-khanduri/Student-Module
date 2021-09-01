@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const connection = require("../configs/DBConnection");
+
+const { snakeCase } = require("lodash");
+
 // const {
 //   ensureAuthenticated,
 //   forwardAuthenticated,
@@ -11,6 +14,7 @@ const connection = require("../configs/DBConnection");
 router.get("/admin", function (req, res) {
   res.render("admin/dashboard", {
     title: "Dashboard",
+    Username: "admin",
   });
 });
 
@@ -18,12 +22,14 @@ router.get("/admin", function (req, res) {
 router.get("/add-user", function (req, res) {
   res.render("admin/add_user", {
     title: "Add User",
+    Username: "admin",
   });
 });
 
 //Render Add Dropdwon Field
-router.get("/admin/add-fields", (req, res) => {
-  connection.query("SELECT * FROM coe", (err, result) => {
+router.get("/admin/add-fields/:field", (req, res) => {
+  let field = snakeCase(req.params.field);
+  connection.query(`SELECT * FROM ${field}`, (err, result) => {
     if (err) {
       console.error(err);
       res.send({
@@ -36,8 +42,9 @@ router.get("/admin/add-fields", (req, res) => {
 
     //render coe page
     res.render("admin/add_fields", {
-      title: "COE",
+      title: field.toUpperCase(),
       fields: results,
+      Username: "admin",
     });
   });
 });

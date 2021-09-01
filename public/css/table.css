@@ -100,3 +100,18 @@ table.table .form-control.error {
 table.table td .add {
   display: none;
 }
+
+.field__id {
+  width: 50px;
+}
+
+footer {
+  min-height: 50px;
+  background: PapayaWhip;
+  margin-top: auto;
+}
+
+.card-content .card-title {
+  text-align: center;
+  font-size: 1.5rem;
+}

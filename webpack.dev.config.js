@@ -9,14 +9,9 @@ module.exports = {
   },
   entry: {
     index: [
-      "./public/js/utils/AutoFill.js",
-      "./public/js/utils/QuillConfig.js",
-      "./public/js/utils/ValidateForm.js",
+      "./public/js/controller.js",
       "./public/js/utils/MenuWindow.js",
       "./public/js/utils/Utils.js",
-      "./public/js/utils/Textbox.js",
-      "./public/js/utils/Date.js",
-      "./public/js/utils/Error.js",
     ],
   },
   output: {
